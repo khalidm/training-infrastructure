@@ -54,7 +54,7 @@
       loop:
         "{{ reference_files }}"
     - name: Download the extras files.
-      get_url: 
+      get_url:
         url: https://swift.rc.nectar.org.au/v1/AUTH_377/public/variant_calling_extra_files.tgz
         dest: "{{ shared_data_path }}/variant_calling_files_extra.tgz"
         mode: 0755
@@ -73,6 +73,6 @@
     - name: Add conda env activation to user's .bashrc
       lineinfile:
         path: "/mnt/home/{{ item.name }}/.bashrc"
-        line: conda activate gatk
+        line: conda activate gatk4
       loop:
         "{{ users }}"
